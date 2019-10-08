@@ -634,13 +634,6 @@ configure_file("configs/${PROJECT_NAME}Config.cmake"
     COPYONLY
 )
 
-install(EXPORT aziotsharedutilTargets
-    FILE
-        "${PROJECT_NAME}Targets.cmake"
-    DESTINATION
-        ${package_location}
-)
-
 install(
 FILES
     "configs/${PROJECT_NAME}Config.cmake"
