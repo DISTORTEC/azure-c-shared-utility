@@ -9,9 +9,6 @@ endif()
 #Use solution folders.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-# Build with -fPIC always
-set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
-
 option(run_valgrind "set run_valgrind to ON if tests are to be run under valgrind/helgrind/drd. Default is OFF" OFF)
 option(compileOption_C "passes a string to the command line of the C compiler" OFF)
 option(compileOption_CXX "passes a string to the command line of the C++ compiler" OFF)
@@ -248,4 +245,3 @@ function(setTargetBuildProperties stbp_target)
         set_target_properties(${stbp_target} PROPERTIES XCODE_ATTRIBUTE_GCC_WARN_UNUSED_VARIABLE "YES")
     endif()
 endfunction()
-
