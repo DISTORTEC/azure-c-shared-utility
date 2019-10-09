@@ -231,7 +231,7 @@ set(source_c_files
     ${LOGGING_STACKTRACE_C_FILE}
 )
 
-if(UNIX) #LINUX OR APPLE
+if(UNIX AND NOT AZURE_CUSTOM_PLATFORM) #LINUX OR APPLE
     set(source_c_files ${source_c_files}
         ./adapters/linux_time.c
     )

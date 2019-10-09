@@ -636,6 +636,10 @@ endfunction()
 # This function focuses on setting files which are unique to a given hardware platform.
 # The choice of tlsio is not unique per-platform, and is set in the main CMakeLists.txt
 function(set_platform_files c_shared_dir)
+    if(AZURE_CUSTOM_PLATFORM)
+        return()
+    endif()
+
     if(WIN32)
         if(${use_condition})
             set(CONDITION_C_FILE ${c_shared_dir}/adapters/condition_win32.c PARENT_SCOPE)
